@@ -43,7 +43,6 @@ public class OfficesController {
         return "officereg";
     }
 
-
     @RequestMapping(value = {"/edit-office-{id}"}, method = RequestMethod.POST)
     public String updateOffice(@Valid Office office, BindingResult result,
                                ModelMap model, @PathVariable Integer id) {
