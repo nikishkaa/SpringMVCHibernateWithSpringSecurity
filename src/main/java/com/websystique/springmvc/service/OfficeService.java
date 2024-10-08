@@ -13,4 +13,5 @@ public interface OfficeService {
 
     Office findById(int id);
 
+    void save(Office office);
 }

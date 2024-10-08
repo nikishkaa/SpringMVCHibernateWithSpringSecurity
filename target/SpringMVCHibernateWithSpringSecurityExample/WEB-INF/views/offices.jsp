@@ -39,11 +39,11 @@
                     <td>${office.address}</td>
                     <td>${office.postalCode}</td>
                     <sec:authorize access="hasRole('ADMIN') or hasRole('DBA')">
-                        <td><a href="<c:url value='/edit-office-${office.id}' />" class="btn btn-success custom-width">edit</a>
+                        <td><a href="<c:url value='offices/edit-office-${office.id}' />" class="btn btn-success custom-width">edit</a>
                         </td>
                     </sec:authorize>
                     <sec:authorize access="hasRole('ADMIN')">
-                        <td><a href="<c:url value='/delete-office-${office.id}' />" class="btn btn-danger custom-width">delete</a>
+                        <td><a href="<c:url value='offices/delete-office-${office.id}' />" class="btn btn-danger custom-width">delete</a>
                         </td>
                     </sec:authorize>
                 </tr>
@@ -53,7 +53,7 @@
     </div>
     <sec:authorize access="hasRole('ADMIN')">
         <div class="well">
-            <a href="<c:url value='/newoffice' />">Add New Office</a>
+            <a href="<c:url value='/offices/newoffice' />">Add New Office</a>
         </div>
     </sec:authorize>
     <br>

@@ -43,4 +43,11 @@ public class OfficeServiceImpl implements OfficeService {
     public Office findById(int id) {
         return officesDao.findById(id);
     }
+
+
+    @Override
+    public void save(Office office) {
+        officesDao.save(office);
+    }
+
 }

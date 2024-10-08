@@ -1,10 +1,8 @@
 package com.websystique.springmvc.dao;
 
 import com.websystique.springmvc.model.Office;
-import com.websystique.springmvc.model.User;
 import org.hibernate.Criteria;
 import org.hibernate.criterion.Order;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -32,5 +30,10 @@ public class OfficesDaoImpl extends AbstractDao<Integer, Office> implements Offi
     public Office findById(int id) {
         Office office = getByKey(id);
         return office;
+    }
+
+    @Override
+    public void save(Office office) {
+        persist(office);
     }
 }

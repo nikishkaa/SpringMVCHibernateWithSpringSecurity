@@ -58,5 +58,30 @@ public class OfficesController {
     }
 
 
-}
+    @RequestMapping(value = {"/newoffice"}, method = RequestMethod.POST)
+    public String saveOffice(@Valid Office office, BindingResult result,
+                             ModelMap model) {
 
+        if (result.hasErrors()) {
+            return "officereg";
+        }
+
+        officesService.save(office);
+
+        model.addAttribute("success", "Office " + office.getName() + " " + office.getAddress()
+                + " registered successfully");
+        model.addAttribute("edit", false);
+        //return "success";
+        return "officeregsuccess";
+    }
+
+    @RequestMapping(value = {"/newoffice"}, method = RequestMethod.GET)
+    public String newOffice(ModelMap model) {
+        Office office = new Office();
+        model.addAttribute("office", office);
+        model.addAttribute("edit", false);
+        /* model.addAttribute("loggedinuser", getPrincipal());*/
+        return "officereg";
+    }
+
+}

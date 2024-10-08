@@ -11,4 +11,6 @@ public interface OfficesDao {
 
     Office findById(int id);
 
+    void save(Office office);
+
 }
